@@ -28,9 +28,19 @@ class TextStyles {
     Color? color,
   }) =>
       TextStyle(
-        fontSize: 16,
+          fontSize: 16,
+          fontFamily: fontFamily,
+          fontWeight: FontWeight.w400,
+          color: color ?? AppColors.black,
+          overflow: TextOverflow.clip);
+
+  static TextStyle heading4SemiBold({
+    Color? color,
+  }) =>
+      TextStyle(
+        fontSize: 10,
         fontFamily: fontFamily,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w700,
         color: color ?? AppColors.black,
       );
 }

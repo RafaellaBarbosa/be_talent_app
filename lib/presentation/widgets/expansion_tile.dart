@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/colors.dart';
 import '../../core/utils/formatter_utils.dart';
 import '../../core/utils/spacing.dart';
 import '../../core/utils/text_styles.dart';
@@ -23,6 +24,13 @@ class EmployeeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      shape: Border.all(width: 1, color: AppColors.gray10),
+      collapsedIconColor: AppColors.blueprimary,
+      iconColor: AppColors.blueprimary,
+      collapsedShape: Border.all(
+        color: AppColors.gray10,
+        width: 1,
+      ),
       leading: CircleAvatar(
         backgroundImage: NetworkImage(imageUrl),
       ),
@@ -38,10 +46,10 @@ class EmployeeTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildRow('Cargo', job),
-              const SizedBox(height: 8),
+              const SizedBox(height: Spacing.little08),
               _buildRow(
                   'Data de admissão', FormatterUtils.formatDate(admissionDate)),
-              const SizedBox(height: 8),
+              const SizedBox(height: Spacing.little08),
               _buildRow('Telefone', FormatterUtils.formatPhone(phone)),
             ],
           ),

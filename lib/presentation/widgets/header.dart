@@ -12,14 +12,19 @@ class Header extends StatelessWidget {
     return Container(
       height: 47,
       padding: const EdgeInsets.symmetric(
-        horizontal: 16,
+        horizontal: Spacing.regular16,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           color: AppColors.blue10,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8), topRight: Radius.circular(8))),
+          border: Border.all(
+            color: AppColors.gray10,
+            width: 1,
+          ),
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(Spacing.little08),
+              topRight: Radius.circular(Spacing.little08))),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(Spacing.little08),
         child: Row(
           children: [
             Text('Foto', style: TextStyles.heading2Medium()),
